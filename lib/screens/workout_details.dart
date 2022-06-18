@@ -137,7 +137,7 @@ class WorkOutDetails extends StatelessWidget {
                           builder: (context, myModel, child) {
                             return ElevatedButton(
                               onPressed: () {
-                                myModel.show(context);
+                                myModel.show();
                               },
                               child: const Text(
                                 "PAUSED",
@@ -175,7 +175,7 @@ class WorkOutDetails extends StatelessWidget {
                         ),
                         OutlinedButton(
                           onPressed: () {
-                            myModel.hide(context);
+                            myModel.hide();
                           },
                           child: const Text(
                             "Resume",
@@ -212,12 +212,12 @@ class WorkoutTimerModel with ChangeNotifier {
       },
     );
   }
-  void show(BuildContext context) {
+  void show() {
     visible = true;
     notifyListeners();
   }
 
-  void hide(BuildContext context) {
+  void hide() {
     visible = false;
     notifyListeners();
   }
